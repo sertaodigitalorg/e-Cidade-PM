@@ -15,13 +15,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome e-Cidade-PM'
+      'Welcome servicos-online'
     );
   });
 
-  it(`should have as title 'e-Cidade-PM'`, () => {
+  it(`should have as title 'servicos-online'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('e-Cidade-PM');
+    expect(app.title).toEqual('servicos-online');
   });
 });

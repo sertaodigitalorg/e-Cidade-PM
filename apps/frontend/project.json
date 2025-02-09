@@ -1,28 +1,28 @@
 {
-  "name": "e-Cidade-PM",
+  "name": "frontend",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/e-Cidade-PM/src",
+  "sourceRoot": "apps/frontend/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/e-Cidade-PM",
-        "index": "apps/e-Cidade-PM/src/index.html",
-        "main": "apps/e-Cidade-PM/src/main.ts",
+        "outputPath": "dist/apps/frontend",
+        "index": "apps/frontend/src/index.html",
+        "main": "apps/frontend/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/e-Cidade-PM/tsconfig.app.json",
+        "tsConfig": "apps/frontend/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/e-Cidade-PM/public"
+            "input": "apps/frontend/public"
           }
         ],
-        "styles": ["apps/e-Cidade-PM/src/styles.scss"],
+        "styles": ["apps/frontend/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -56,10 +56,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "e-Cidade-PM:build:production"
+          "buildTarget": "frontend:build:production"
         },
         "development": {
-          "buildTarget": "e-Cidade-PM:build:development"
+          "buildTarget": "frontend:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "e-Cidade-PM:build"
+        "buildTarget": "frontend:build"
       }
     },
     "lint": {
@@ -77,13 +77,13 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/e-Cidade-PM/jest.config.ts"
+        "jestConfig": "apps/frontend/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "e-Cidade-PM:build",
+        "buildTarget": "frontend:build",
         "port": 4200,
         "spa": true
       }

@@ -46,6 +46,9 @@
     },
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
+    },
+    "server": {
+      "cache": true
     }
   },
   "plugins": [

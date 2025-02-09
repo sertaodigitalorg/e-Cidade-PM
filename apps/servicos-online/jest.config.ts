@@ -1,8 +1,8 @@
 export default {
-  displayName: 'e-Cidade-PM',
+  displayName: 'servicos-online',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/e-Cidade-PM',
+  coverageDirectory: '../../coverage/apps/servicos-online',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
