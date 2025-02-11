@@ -67,6 +67,6 @@ class User implements UserInterface
 
     public function getUserIdentifier(): string 
     {
-        return $this->getUsername();
+        return $this->id_usuario;
     }
 }
