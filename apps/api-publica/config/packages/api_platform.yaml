@@ -1,7 +1,9 @@
 api_platform:
-    title: Hello API Platform
+    title: e-Cidade API Pública
     version: 1.0.0
     defaults:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
