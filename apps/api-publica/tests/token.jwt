@@ -1,0 +1,18 @@
+<?php
+
+require 'vendor/autoload.php';
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
+$jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MzkzMDk0ODgsImV4cCI6MTczOTMxMzA4OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXN1YXJpb190ZXN0ZSJ9.ECwIUAMauD2N1trgiTHzXs8cwyPEg5HBy2kH1fhA_KhfSLlh2fWEVBos9WP66Blp-IHhgEYuYrGOj54zjTErbvbJ5KbsISaxBOn5q_GPjcUQ7Ksv8NxxX3Je5SdstBte_lYOOetqwRJHE9H-Q8Ro0lLdImW_sU3t_idVW9glYeMjZkp3VtNzK8IkyasKzB_8SCZvr-bnbPqM_quFWr2R1_8ZYg63lq4ClmiqdNzv4DWF_pBvNiVVHh12lYcF_1rNogs6Ls1-QxFKZL587F-f1ZmxZp2DSuJlhFh3vgxXSTn7XbsDoUxZHvf-mVO4YBjRM92IXd6JcMO2a0h8Vb-vHg";
+$publicKey = file_get_contents('config/jwt/public.pem');
+
+try {
+    $decoded = JWT::decode($jwt, new Key($publicKey, 'RS256'));
+    print_r($decoded);
+} catch (Exception $e) {
+    echo "Erro ao validar o token: " . $e->getMessage();
+}
+
+?>
