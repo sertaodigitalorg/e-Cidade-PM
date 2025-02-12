@@ -5,6 +5,10 @@ security:
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         users_in_memory: { memory: null }
+        app_user_provider:
+            entity:
+                class: App\Entity\DbUsuario
+                property: login
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -21,6 +25,7 @@ security:
         api:
             pattern: ^/api/
             stateless: true
+            provider: app_user_provider
             jwt: ~
 
     # Easy way to control access for large sections of your site
@@ -28,7 +33,7 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-        # - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/configuracoes, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:
     security:
