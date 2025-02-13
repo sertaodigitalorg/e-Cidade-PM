@@ -13,8 +13,8 @@ class User implements UserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: "integer")]
-    private int $id_usuario;
+    #[ORM\Column(name: "id_usuario", type: "integer")]
+    private int $idUsuario;
 
     #[ORM\Column(type: "string", length: 60)]
     private string $nome;
@@ -25,24 +25,24 @@ class User implements UserInterface
     #[ORM\Column(type: "string", length: 40)]
     private string $senha; // Senha ja criptografada no banco
 
-    #[ORM\Column(type: "integer", options: ["default" => 1])]
-    private int $usuarioativo;
+    #[ORM\Column(name: "usuarioativo", type: "integer", options: ["default" => 1])]
+    private int $usuarioAtivo;
 
     #[ORM\Column(type: "string", length: 200, nullable: true)]
     private ?string $email;
 
-    #[ORM\Column(type: "integer", options: ["default" => 0])]
-    private int $usuext;
+    #[ORM\Column(name: "usuext", type: "integer", options: ["default" => 0])]
+    private int $usurioExterno;
 
     #[ORM\Column(type: "integer", nullable: true)]
     private ?int $administrador;
 
-    #[ORM\Column(type: "date")]
-    private \DateTimeInterface $datatoken;
+    #[ORM\Column(name: "datatoken", type: "date")]
+    private \DateTimeInterface $dataToken;
 
     public function getId(): int
     {
-        return $this->id_usuario;
+        return $this->idUsuario;
     }
 
     public function getUsername(): string
@@ -67,6 +67,6 @@ class User implements UserInterface
 
     public function getUserIdentifier(): string 
     {
-        return $this->id_usuario;
+        return $this->idUsuario;
     }
 }
