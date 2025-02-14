@@ -1,6 +1,0 @@
-doctrine:
-    orm:
-        mappings:
-            DatabaseLibrary:
-                type: attribute
-                is_bundle: true
