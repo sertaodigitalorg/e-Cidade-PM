@@ -40,6 +40,9 @@
             "./migrations/.gitignore"
         ]
     },
+    "ecidade/data-base-library": {
+        "version": "dev-main"
+    },
     "lexik/jwt-authentication-bundle": {
         "version": "3.1",
         "recipe": {

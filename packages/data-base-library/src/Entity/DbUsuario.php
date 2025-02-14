@@ -1,29 +1,13 @@
 <?php
 
-namespace App\Entity;
+namespace ECidade\DataBaseLibrary\Entity;
 
-use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
-use ApiPlatform\Metadata\Get;
-use ApiPlatform\Metadata\GetCollection;
-use ApiPlatform\Metadata\Post;
-use ApiPlatform\Metadata\Put;
-use ApiPlatform\Metadata\Delete;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity]
 #[ORM\Table(name: "db_usuarios", schema: "configuracoes")]
-#[ApiResource(
-    operations: [
-        new Get(uriTemplate: '/configuracoes/usuario/{idUsuario}', security: "is_granted('ROLE_USER')"),
-        new GetCollection(uriTemplate: '/configuracoes/usuarios', security: "is_granted('ROLE_USER')"),
-        new Post(uriTemplate: '/configuracoes/usuario', security: "is_granted('ROLE_USER')"),
-        new Put(uriTemplate: '/configuracoes/usuario/{idUsuario}', security: "is_granted('ROLE_USER')"),
-        new Delete(uriTemplate: '/configuracoes/usuario/{idUsuario}', security: "is_granted('ROLE_USER')")
-    ]
-)]
-class DbUsuario implements UserInterface
+class DbUsuario
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -150,30 +134,5 @@ class DbUsuario implements UserInterface
     {
         $this->dataToken = $dataToken;
         return $this;
-    }
-
-    public function getSalt(): ?string
-    {
-        return null; // O Symfony não precisa de salt quando usa hashing moderno (bcrypt, argon2)
-    }
-
-    public function getUsername(): string
-    {
-        return $this->login;  // O Symfony usa esse método para identificar o usuário
-    }
-
-    public function getRoles(): array
-    {
-        return ['ROLE_USER']; // Pode ser ajustado conforme a necessidade
-    }
-
-    public function eraseCredentials(): void
-    {
-        // Metodo obrigatorio, mas pode ficar vazio
-    }
-
-    public function getUserIdentifier(): string 
-    {
-        return $this->idUsuario;
     }
 }

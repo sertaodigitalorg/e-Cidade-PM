@@ -42,3 +42,8 @@ Thumbs.db
 .nx/workspace-data
 
 .angular
+
+# monorepo
+vendor
+composer.lock
+package-lock.json
