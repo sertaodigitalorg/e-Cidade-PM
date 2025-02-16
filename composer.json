@@ -2,6 +2,7 @@
     "name": "ecidade/monorepo",
     "description": "Monorepo do e-Cidade contendo API Pública, API Privada e Biblioteca de Banco de Dados.",
     "type": "project",
+    "license": "MIT",
     "repositories": [
         {
             "type": "path",
@@ -9,7 +10,7 @@
         }
     ],
     "require": {
-        "ecidade/data-base-library": "*"
+        "ecidade/data-base-library": "dev-main"
     },
     "autoload": {
         "psr-4": {
@@ -17,5 +18,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true,
+            "symfony/flex": true
+        }
+    }
 }
