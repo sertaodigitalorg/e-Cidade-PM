@@ -3,12 +3,6 @@
     "license": "proprietary",
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../../packages/data-base-library"
-        }
-    ],
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
@@ -51,8 +45,7 @@
         "symfony/webpack-encore-bundle": "^2.2",
         "symfony/yaml": "7.2.*",
         "twig/extra-bundle": "^2.12|^3.20",
-        "twig/twig": "^2.12|^3.20",
-        "ecidade/data-base-library": "*"
+        "twig/twig": "^2.12|^3.20"
     },
     "config": {
         "allow-plugins": {
