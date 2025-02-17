@@ -1,11 +1,12 @@
 <?php
 
-namespace ECidade\DataBaseLibrary\Entity;
+namespace App\Entity;
 
+use App\Repository\DbUsuarioRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity]
+#[ORM\Entity(repositoryClass: DbUsuarioRepository::class)]
 #[ORM\Table(name: "db_usuarios", schema: "configuracoes")]
 class DbUsuario
 {

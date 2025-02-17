@@ -1,10 +1,10 @@
 <?php
 
-namespace ECidade\DataBaseLibrary\Repository;
+namespace App\Repository;
 
+use App\Entity\DbUsuario;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use ECidade\DataBaseLibrary\Entity\DbUsuario;
 
 /**
  * @extends ServiceEntityRepository<DbUsuario>
@@ -15,4 +15,29 @@ class DbUsuarioRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, DbUsuario::class);
     }
+
+    //    /**
+    //     * @return DbUsuario[] Returns an array of DbUsuario objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('d')
+    //            ->andWhere('d.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('d.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
+
+    //    public function findOneBySomeField($value): ?DbUsuario
+    //    {
+    //        return $this->createQueryBuilder('d')
+    //            ->andWhere('d.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }
