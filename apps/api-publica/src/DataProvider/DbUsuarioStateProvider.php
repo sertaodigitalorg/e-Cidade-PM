@@ -7,7 +7,7 @@ use ApiPlatform\State\ProviderInterface;
 use App\ApiResource\ApiDbUsuario;
 use ECidade\DataBase\Entity\DbUsuario;
 use ECidade\DataBase\Repository\DbUsuarioRepository;
-use ECidade\DataBase\Utils\DatabaseHelper;
+use ECidade\DataBase\Utils\DataBaseHelper;
 
 /**
  * State Provider para a API Platform 4.0 buscando dados da data-base-library
@@ -21,7 +21,7 @@ class DbUsuarioStateProvider implements ProviderInterface
     public function __construct()
     {
         // Obter o EntityManager usando a classe helper
-        $entityManager = DatabaseHelper::getEntityManager();
+        $entityManager = DataBaseHelper::getEntityManager();
 
         // Obter o repositório
         $this->usuarioRepository = $entityManager->getRepository(DbUsuario::class);

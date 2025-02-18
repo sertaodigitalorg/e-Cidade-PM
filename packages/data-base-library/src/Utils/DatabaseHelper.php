@@ -6,7 +6,7 @@ use ECidade\DataBase\Kernel;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Dotenv\Dotenv;
 
-class DatabaseHelper
+class DataBaseHelper
 {
     private static ?EntityManagerInterface $entityManager = null;
 

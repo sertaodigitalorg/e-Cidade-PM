@@ -3,23 +3,13 @@
 use Doctrine\ORM\EntityManagerInterface;
 use ECidade\DataBase\Repository\DbUsuarioRepository;
 use ECidade\DataBase\Entity\DbUsuario;
+use ECidade\DataBase\Utils\DataBaseHelper;
 use Symfony\Component\Dotenv\Dotenv;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Carregar variáveis de ambiente
-$dotenv = new Dotenv();
-$dotenv->loadEnv(__DIR__ . '/../.env');
-
-// Inicializar o Symfony Kernel
-$kernel = new \ECidade\DataBase\Kernel('test', true);
-$kernel->boot();
-
-// Obter o container de serviços
-$container = $kernel->getContainer();
-
-/** @var EntityManagerInterface $entityManager */
-$entityManager = $container->get('doctrine.orm.entity_manager');
+// Obter o EntityManager usando a classe helper
+$entityManager = DataBaseHelper::getEntityManager();
 
 /** @var DbUsuarioRepository $repository */
 $repository = $entityManager->getRepository(DbUsuario::class);
