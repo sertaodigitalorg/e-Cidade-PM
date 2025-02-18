@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdb40a218ac5b8b5034f19a6b9e3fc1e",
+    "content-hash": "111af5ac1e51cb2c3d4a53882283b3c3",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
@@ -1463,6 +1463,89 @@
             "time": "2025-01-01T22:12:03+00:00"
         },
         {
+            "name": "doctrine/data-fixtures",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "f7f1e12d6bceb58c204b3e77210a103c1c57601e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/f7f1e12d6bceb58c204b3e77210a103c1c57601e",
+                "reference": "f7f1e12d6bceb58c204b3e77210a103c1c57601e",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/persistence": "^3.1 || ^4.0",
+                "php": "^8.1",
+                "psr/log": "^1.1 || ^2 || ^3"
+            },
+            "conflict": {
+                "doctrine/dbal": "<3.5 || >=5",
+                "doctrine/orm": "<2.14 || >=4",
+                "doctrine/phpcr-odm": "<1.3.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^12",
+                "doctrine/dbal": "^3.5 || ^4",
+                "doctrine/mongodb-odm": "^1.3.0 || ^2.0.0",
+                "doctrine/orm": "^2.14 || ^3",
+                "ext-sqlite3": "*",
+                "fig/log-test": "^1",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5.3",
+                "symfony/cache": "^6.4 || ^7",
+                "symfony/var-exporter": "^6.4 || ^7"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "For using MongoDB ODM 1.3 with PHP 7 (deprecated)",
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\DataFixtures\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "https://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/data-fixtures/issues",
+                "source": "https://github.com/doctrine/data-fixtures/tree/2.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdata-fixtures",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-01-21T13:21:31+00:00"
+        },
+        {
             "name": "doctrine/dbal",
             "version": "3.9.4",
             "source": {
@@ -1737,6 +1820,92 @@
                 }
             ],
             "time": "2025-01-15T11:12:38+00:00"
+        },
+        {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
+                "reference": "90185317e6bb3d845667c5ebd444d9c83ae19a01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/90185317e6bb3d845667c5ebd444d9c83ae19a01",
+                "reference": "90185317e6bb3d845667c5ebd444d9c83ae19a01",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "^2.0",
+                "doctrine/doctrine-bundle": "^2.2",
+                "doctrine/orm": "^2.14.0 || ^3.0",
+                "doctrine/persistence": "^2.4 || ^3.0",
+                "php": "^8.1",
+                "psr/log": "^2 || ^3",
+                "symfony/config": "^5.4 || ^6.0 || ^7.0",
+                "symfony/console": "^5.4 || ^6.0 || ^7.0",
+                "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
+                "symfony/deprecation-contracts": "^2.1 || ^3",
+                "symfony/doctrine-bridge": "^5.4.48 || ^6.4.16 || ^7.1.9",
+                "symfony/http-kernel": "^5.4 || ^6.0 || ^7.0"
+            },
+            "conflict": {
+                "doctrine/dbal": "< 3"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^12",
+                "phpstan/phpstan": "^2",
+                "phpunit/phpunit": "^10.5.38 || ^11"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Bundle\\FixturesBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "https://www.doctrine-project.org"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DoctrineFixturesBundle",
+            "homepage": "https://www.doctrine-project.org",
+            "keywords": [
+                "Fixture",
+                "persistence"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/DoctrineFixturesBundle/issues",
+                "source": "https://github.com/doctrine/DoctrineFixturesBundle/tree/4.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdoctrine-fixtures-bundle",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-12-05T18:35:55+00:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -2503,11 +2672,12 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/data-base-library",
-                "reference": "bcd8f577353acecb59ff0cb62e7229342d230682"
+                "reference": "f526d69a43c3adbd67d092e1be251807717cec27"
             },
             "require": {
                 "doctrine/dbal": "^3",
-                "doctrine/doctrine-bundle": "^2.13",
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/doctrine-fixtures-bundle": "*",
                 "doctrine/doctrine-migrations-bundle": "^3.4",
                 "doctrine/orm": "^3.3",
                 "ext-ctype": "*",
@@ -2515,40 +2685,28 @@
                 "php": ">=8.2",
                 "phpdocumentor/reflection-docblock": "^5.6",
                 "phpstan/phpdoc-parser": "^2.0",
-                "symfony/asset": "7.2.*",
-                "symfony/asset-mapper": "7.2.*",
                 "symfony/console": "7.2.*",
-                "symfony/doctrine-messenger": "7.2.*",
                 "symfony/dotenv": "7.2.*",
-                "symfony/expression-language": "7.2.*",
                 "symfony/flex": "^2",
-                "symfony/form": "7.2.*",
                 "symfony/framework-bundle": "7.2.*",
-                "symfony/http-client": "7.2.*",
-                "symfony/intl": "7.2.*",
-                "symfony/mailer": "7.2.*",
-                "symfony/mime": "7.2.*",
-                "symfony/monolog-bundle": "^3.0",
-                "symfony/notifier": "7.2.*",
                 "symfony/process": "7.2.*",
-                "symfony/property-access": "7.2.*",
-                "symfony/property-info": "7.2.*",
                 "symfony/runtime": "7.2.*",
-                "symfony/security-bundle": "7.2.*",
-                "symfony/serializer": "7.2.*",
-                "symfony/stimulus-bundle": "^2.23",
                 "symfony/string": "7.2.*",
-                "symfony/translation": "7.2.*",
-                "symfony/twig-bundle": "7.2.*",
-                "symfony/ux-turbo": "^2.23",
                 "symfony/validator": "7.2.*",
-                "symfony/web-link": "7.2.*",
-                "symfony/yaml": "7.2.*",
-                "twig/extra-bundle": "^2.12|^3.0",
-                "twig/twig": "^2.12|^3.0"
+                "symfony/yaml": "7.2.*"
             },
             "conflict": {
                 "symfony/symfony": "*"
+            },
+            "replace": {
+                "symfony/polyfill-ctype": "*",
+                "symfony/polyfill-iconv": "*",
+                "symfony/polyfill-php72": "*",
+                "symfony/polyfill-php73": "*",
+                "symfony/polyfill-php74": "*",
+                "symfony/polyfill-php80": "*",
+                "symfony/polyfill-php81": "*",
+                "symfony/polyfill-php82": "*"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5",
@@ -2564,19 +2722,18 @@
             },
             "autoload": {
                 "psr-4": {
-                    "ECidade\\DataBaseLibrary\\": "src/"
+                    "ECidade\\DataBase\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "ECidade\\DataBaseLibrary\\Tests\\": "tests/"
+                    "ECidade\\DataBase\\Tests\\": "tests/"
                 }
             },
             "scripts": {
                 "auto-scripts": {
                     "cache:clear": "symfony-cmd",
-                    "assets:install %PUBLIC_DIR%": "symfony-cmd",
-                    "importmap:install": "symfony-cmd"
+                    "assets:install %PUBLIC_DIR%": "symfony-cmd"
                 },
                 "post-install-cmd": [
                     "@auto-scripts"
@@ -2590,6 +2747,7 @@
             ],
             "description": "Biblioteca de entidades, repositórios e migrações do e-Cidade",
             "transport-options": {
+                "symlink": true,
                 "relative": true
             }
         },
@@ -3318,16 +3476,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "72e51f7c32c5aef7c8b462195b8c599b11199893"
+                "reference": "51087f87dcce2663e1fed4dfd4e56eccd580297e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/72e51f7c32c5aef7c8b462195b8c599b11199893",
-                "reference": "72e51f7c32c5aef7c8b462195b8c599b11199893",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/51087f87dcce2663e1fed4dfd4e56eccd580297e",
+                "reference": "51087f87dcce2663e1fed4dfd4e56eccd580297e",
                 "shasum": ""
             },
             "require": {
@@ -3359,9 +3517,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.0.1"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.0.2"
             },
-            "time": "2025-02-13T12:25:43+00:00"
+            "time": "2025-02-17T20:25:51+00:00"
         },
         {
             "name": "psr/cache",
@@ -4488,78 +4646,6 @@
                 }
             ],
             "time": "2025-01-27T11:08:17+00:00"
-        },
-        {
-            "name": "symfony/doctrine-messenger",
-            "version": "v7.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/doctrine-messenger.git",
-                "reference": "55cd0f79415b3ae18587df903926c8e5d2b51f25"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/doctrine-messenger/zipball/55cd0f79415b3ae18587df903926c8e5d2b51f25",
-                "reference": "55cd0f79415b3ae18587df903926c8e5d2b51f25",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/dbal": "^3.6|^4",
-                "php": ">=8.2",
-                "symfony/messenger": "^6.4|^7.0",
-                "symfony/service-contracts": "^2.5|^3"
-            },
-            "conflict": {
-                "doctrine/persistence": "<1.3"
-            },
-            "require-dev": {
-                "doctrine/persistence": "^1.3|^2|^3",
-                "symfony/property-access": "^6.4|^7.0",
-                "symfony/serializer": "^6.4|^7.0"
-            },
-            "type": "symfony-messenger-bridge",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Messenger\\Bridge\\Doctrine\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Doctrine Messenger Bridge",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/doctrine-messenger/tree/v7.2.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-01-07T09:39:55+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -5905,93 +5991,6 @@
                 }
             ],
             "time": "2025-01-27T11:08:17+00:00"
-        },
-        {
-            "name": "symfony/messenger",
-            "version": "v7.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/messenger.git",
-                "reference": "8e5b72deb81e57c8868eb9fe7b1dcb4af694ef10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/messenger/zipball/8e5b72deb81e57c8868eb9fe7b1dcb4af694ef10",
-                "reference": "8e5b72deb81e57c8868eb9fe7b1dcb4af694ef10",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.2",
-                "psr/log": "^1|^2|^3",
-                "symfony/clock": "^6.4|^7.0",
-                "symfony/deprecation-contracts": "^2.5|^3"
-            },
-            "conflict": {
-                "symfony/console": "<7.2",
-                "symfony/event-dispatcher": "<6.4",
-                "symfony/event-dispatcher-contracts": "<2.5",
-                "symfony/framework-bundle": "<6.4",
-                "symfony/http-kernel": "<6.4",
-                "symfony/serializer": "<6.4"
-            },
-            "require-dev": {
-                "psr/cache": "^1.0|^2.0|^3.0",
-                "symfony/console": "^7.2",
-                "symfony/dependency-injection": "^6.4|^7.0",
-                "symfony/event-dispatcher": "^6.4|^7.0",
-                "symfony/http-kernel": "^6.4|^7.0",
-                "symfony/process": "^6.4|^7.0",
-                "symfony/property-access": "^6.4|^7.0",
-                "symfony/rate-limiter": "^6.4|^7.0",
-                "symfony/routing": "^6.4|^7.0",
-                "symfony/serializer": "^6.4|^7.0",
-                "symfony/service-contracts": "^2.5|^3",
-                "symfony/stopwatch": "^6.4|^7.0",
-                "symfony/validator": "^6.4|^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Messenger\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Samuel Roze",
-                    "email": "samuel.roze@gmail.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Helps applications send and receive messages to/from other applications or via message queues",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/messenger/tree/v7.2.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-01-17T10:17:27+00:00"
         },
         {
             "name": "symfony/mime",

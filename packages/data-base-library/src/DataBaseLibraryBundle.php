@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ECidade\DataBase;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

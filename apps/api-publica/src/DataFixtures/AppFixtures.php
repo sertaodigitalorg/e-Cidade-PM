@@ -1,6 +1,6 @@
 <?php
 
-namespace ECidade\DataBase\DataFixtures;
+namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;

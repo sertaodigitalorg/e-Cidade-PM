@@ -21,14 +21,8 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
-    App\ApiResource\ApiDbUsuario:
-        public: true
-        tags: ['api_platform.resource']
-        
-    # Garantir que o DataProvider injete corretamente o repositório da data-base-library
-    App\DataProvider\DbUsuarioDataProvider:
+    # Registrar o StateProvider do API Platform
+    App\DataProvider\DbUsuarioStateProvider:
         arguments:
-            $usuarioRepository: '@ECidade\DataBaseLibrary\Repository\DbUsuarioRepository'
+            $usuarioRepository: '@ECidade\DataBase\Repository\DbUsuarioRepository'
         tags: ['api_platform.state_provider']

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace ECidade\DataBase\Repository;
 
-use App\Entity\DbUsuario;
+use ECidade\DataBase\Entity\DbUsuario;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

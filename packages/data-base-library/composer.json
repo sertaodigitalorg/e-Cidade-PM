@@ -37,12 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "ECidade\\DataBase\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "ECidade\\DataBase\\Tests\\": "tests/"
         }
     },
     "replace": {

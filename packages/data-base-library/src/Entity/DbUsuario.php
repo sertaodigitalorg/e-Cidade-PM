@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Entity;
+namespace ECidade\DataBase\Entity;
 
-use App\Repository\DbUsuarioRepository;
+use ECidade\DataBase\Repository\DbUsuarioRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 

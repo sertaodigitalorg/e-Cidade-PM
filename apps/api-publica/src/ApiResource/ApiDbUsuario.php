@@ -8,13 +8,13 @@ use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use ApiPlatform\Metadata\Delete;
-use ECidade\DataBaseLibrary\Entity\DbUsuario;
-
+use App\DataProvider\DbUsuarioStateProvider;
+use ECidade\DataBase\Entity\DbUsuario;
 
 #[ApiResource(
     operations: [   
-        new Get(uriTemplate: '/configuracoes/usuario/{idUsuario}', security: "is_granted('ROLE_USER')"),
-        new GetCollection(uriTemplate: '/configuracoes/usuarios', security: "is_granted('ROLE_USER')"),
+        new Get(uriTemplate: '/configuracoes/usuario/{idUsuario}', security: "is_granted('ROLE_USER')", provider: DbUsuarioStateProvider::class),
+        new GetCollection(uriTemplate: '/configuracoes/usuarios', security: "is_granted('ROLE_USER')", provider: DbUsuarioStateProvider::class),
         new Post(uriTemplate: '/configuracoes/usuario', security: "is_granted('ROLE_USER')"),
         new Put(uriTemplate: '/configuracoes/usuario/{idUsuario}', security: "is_granted('ROLE_USER')"),
         new Delete(uriTemplate: '/configuracoes/usuario/{idUsuario}', security: "is_granted('ROLE_USER')")

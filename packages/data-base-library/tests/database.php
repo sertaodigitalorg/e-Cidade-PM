@@ -1,8 +1,8 @@
 <?php
 
 use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\DbUsuarioRepository;
-use App\Entity\DbUsuario;
+use ECidade\DataBase\Repository\DbUsuarioRepository;
+use ECidade\DataBase\Entity\DbUsuario;
 use Symfony\Component\Dotenv\Dotenv;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -12,7 +12,7 @@ $dotenv = new Dotenv();
 $dotenv->loadEnv(__DIR__ . '/../.env');
 
 // Inicializar o Symfony Kernel
-$kernel = new \App\Kernel('test', true);
+$kernel = new \ECidade\DataBase\Kernel('test', true);
 $kernel->boot();
 
 // Obter o container de serviços
