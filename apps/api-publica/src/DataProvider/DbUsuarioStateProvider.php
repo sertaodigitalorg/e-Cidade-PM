@@ -5,18 +5,26 @@ namespace App\DataProvider;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
 use App\ApiResource\ApiDbUsuario;
+use ECidade\DataBase\Entity\DbUsuario;
 use ECidade\DataBase\Repository\DbUsuarioRepository;
+use ECidade\DataBase\Utils\DatabaseHelper;
 
 /**
  * State Provider para a API Platform 4.0 buscando dados da data-base-library
+ * 
+ * @implements ProviderInterface<ApiDbUsuario|array|null>
  */
 class DbUsuarioStateProvider implements ProviderInterface
 {
     private DbUsuarioRepository $usuarioRepository;
 
-    public function __construct(DbUsuarioRepository $usuarioRepository)
+    public function __construct()
     {
-        $this->usuarioRepository = $usuarioRepository;
+        // Obter o EntityManager usando a classe helper
+        $entityManager = DatabaseHelper::getEntityManager();
+
+        // Obter o repositório
+        $this->usuarioRepository = $entityManager->getRepository(DbUsuario::class);
     }
 
     public function provide(Operation $operation, array $uriVariables = [], array $context = []): ApiDbUsuario|array|null

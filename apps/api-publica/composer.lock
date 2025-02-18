@@ -2672,7 +2672,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/data-base-library",
-                "reference": "f526d69a43c3adbd67d092e1be251807717cec27"
+                "reference": "0489911a096063fb3bac8b11c6c0e22ca478b940"
             },
             "require": {
                 "doctrine/dbal": "^3",

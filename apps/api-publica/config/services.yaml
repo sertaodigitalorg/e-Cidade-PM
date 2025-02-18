@@ -23,6 +23,6 @@ services:
 
     # Registrar o StateProvider do API Platform
     App\DataProvider\DbUsuarioStateProvider:
-        arguments:
-            $usuarioRepository: '@ECidade\DataBase\Repository\DbUsuarioRepository'
+        #arguments:
+        #    $usuarioRepository: '@ECidade\DataBase\Repository\DbUsuarioRepository'
         tags: ['api_platform.state_provider']

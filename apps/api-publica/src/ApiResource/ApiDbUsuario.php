@@ -32,4 +32,19 @@ class ApiDbUsuario extends DbUsuario
         $this->nome = $usuario->getNome();
         $this->email = $usuario->getEmail();
     }
+
+    public function getIdUsuario(): int
+    {
+        return $this->idUsuario;
+    }
+
+    public function getNome(): string
+    {
+        return $this->nome;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
 }
