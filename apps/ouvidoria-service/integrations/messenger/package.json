@@ -1,0 +1,31 @@
+{
+  "name": "@botpresshub/messenger",
+  "description": "Messenger integration for Botpress",
+  "private": true,
+  "scripts": {
+    "build": "bp add -y && bp build",
+    "check:type": "tsc --noEmit",
+    "check:bplint": "bp lint"
+  },
+  "dependencies": {
+    "@botpress/cli": "workspace:*",
+    "@botpress/client": "workspace:*",
+    "@botpress/sdk": "workspace:*",
+    "@botpress/sdk-addons": "workspace:*",
+    "@slack/web-api": "^6.8.0",
+    "axios": "^1.6.2",
+    "marked": "^13.0.2",
+    "messaging-api-messenger": "^1.1.0",
+    "preact": "^10.23.1",
+    "preact-render-to-string": "^6.5.7",
+    "query-string": "^6.14.1"
+  },
+  "devDependencies": {
+    "@botpress/cli": "workspace:*",
+    "@botpress/common": "workspace:*",
+    "@sentry/cli": "^2.39.1"
+  },
+  "bpDependencies": {
+    "typing-indicator": "../../interfaces/typing-indicator"
+  }
+}

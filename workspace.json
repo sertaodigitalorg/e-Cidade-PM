@@ -1,0 +1,14 @@
+{
+    "version": 1.0.0,
+    "projects": {
+      "auth-frontend": { "root": "apps/auth-frontend", "type": "app" },
+      "api-publica": { "root": "apps/api-publica", "type": "app" },
+      "api-privada": { "root": "apps/api-privada", "type": "app" },
+      "auth-service": { "root": "apps/auth-service", "type": "app" },
+      "database-service": { "root": "apps/database-service", "type": "app" },
+      "ouvidoria-service": { "root": "apps/ouvidoria-service", "type": "app" },
+      "wordpress-portal": { "root": "apps/wordpress-portal", "type": "app" },
+      "app": { "root": "tools/app", "type": "lib" }
+    }
+  }
+  

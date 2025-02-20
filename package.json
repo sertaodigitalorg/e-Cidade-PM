@@ -1,6 +1,6 @@
 {
   "name": "@e-cidade-pm/source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {},
   "private": true,
@@ -30,6 +30,7 @@
     "@hotwired/stimulus": "^3.0.0",
     "@hotwired/turbo": "^7.1.1 || ^8.0",
     "@nrwl/angular": "^19.8.4",
+    "@nrwl/workspace": "^19.8.4",
     "@nx/angular": "20.4.2",
     "@nx/devkit": "20.4.2",
     "@nx/eslint": "20.4.2",

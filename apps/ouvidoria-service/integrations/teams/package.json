@@ -1,0 +1,28 @@
+{
+  "name": "@botpresshub/teams",
+  "description": "Teams integration for Botpress",
+  "private": true,
+  "scripts": {
+    "build": "bp add -y && bp build",
+    "check:type": "tsc --noEmit",
+    "check:bplint": "bp lint"
+  },
+  "dependencies": {
+    "@botpress/client": "workspace:*",
+    "@botpress/sdk": "workspace:*",
+    "@botpress/sdk-addons": "workspace:*",
+    "axios": "^1.5.1",
+    "botbuilder": "^4.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.1.0"
+  },
+  "devDependencies": {
+    "@botpress/cli": "workspace:*",
+    "@botpress/common": "workspace:*",
+    "@sentry/cli": "^2.39.1",
+    "@types/jsonwebtoken": "^9.0.3"
+  },
+  "bpDependencies": {
+    "typing-indicator": "../../interfaces/typing-indicator"
+  }
+}
