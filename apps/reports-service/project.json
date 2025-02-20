@@ -1,0 +1,23 @@
+{
+    "name": "reports",
+    "root": "packages/reports-service",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "symfony server:start --port=9000",
+            "cwd": "apps/reports-service"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit apps/reports-service/tests",
+                "parallel": false,
+                "cwd": "packages/reports-service"
+            },
+            "cache": false
+        }
+    }
+}
+  

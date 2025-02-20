@@ -1,0 +1,23 @@
+{
+    "name": "api",
+    "root": "packages/api-service",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "symfony server:start --port=8001",
+            "cwd": "apps/api-service"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit apps/api-service/tests",
+                "parallel": false,
+                "cwd": "packages/api-service"
+            },
+            "cache": false
+        }
+    }
+}
+  

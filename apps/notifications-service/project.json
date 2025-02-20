@@ -1,0 +1,23 @@
+{
+    "name": "notifications",
+    "root": "packages/notifications-service",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "symfony server:start --port=9000",
+            "cwd": "apps/notifications-service"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit apps/notifications-service/tests",
+                "parallel": false,
+                "cwd": "packages/notifications-service"
+            },
+            "cache": false
+        }
+    }
+}
+  

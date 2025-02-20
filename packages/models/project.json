@@ -1,0 +1,16 @@
+{
+    "name": "models",
+    "root": "packages/models",
+    "targets": {
+        "test": {
+        "executor": "nx:run-commands",
+        "options": {
+            "command": "php vendor/bin/phpunit packages/core/tests",
+            "parallel": false,
+            "cwd": "packages/models"
+        },
+        "cache": false
+        }
+    }
+}
+  

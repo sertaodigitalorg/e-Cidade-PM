@@ -1,0 +1,23 @@
+{
+    "name": "ouvidoria",
+    "root": "tools/ouvidoria",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "symfony server:start --port=8001",
+            "cwd": "tools/ouvidoria"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit tools/ouvidoria/tests",
+                "parallel": false,
+                "cwd": "tools/ouvidoria"
+            },
+            "cache": false
+        }
+    }
+}
+  

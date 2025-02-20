@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "ECidade\\Storage\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "ECidade\\Storage\\Tests\\": "tests/"
         }
     },
     "replace": {

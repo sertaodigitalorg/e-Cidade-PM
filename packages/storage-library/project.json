@@ -1,0 +1,16 @@
+{
+    "name": "storage",
+    "root": "packages/storage-library",
+    "targets": {
+        "test": {
+        "executor": "nx:run-commands",
+        "options": {
+            "command": "php vendor/bin/phpunit packages/core/tests",
+            "parallel": false,
+            "cwd": "packages/storage-library"
+        },
+        "cache": false
+        }
+    }
+}
+  

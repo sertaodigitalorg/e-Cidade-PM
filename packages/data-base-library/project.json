@@ -1,0 +1,16 @@
+{
+    "name": "database",
+    "root": "packages/data-base-library",
+    "targets": {
+        "test": {
+        "executor": "nx:run-commands",
+        "options": {
+            "command": "php ./packages/data-base-library/tests/database.php",
+            "parallel": false,
+            "cwd": "packages/data-base-library"
+        },
+        "cache": false
+        }
+    }
+}
+  

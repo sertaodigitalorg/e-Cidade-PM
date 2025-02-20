@@ -1,76 +1,45 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "master",
+  "defaultBase": "main",
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
-      "default",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.mjs",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/test-setup.[jt]s",
-      "!{projectRoot}/test-setup.[jt]s"
+      "default"
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "67a7a19bc1623479dec7bac8",
-  "targetDefaults": {
-    "@angular-devkit/build-angular:browser": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "@nx/eslint:lint": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore",
-        "{workspaceRoot}/eslint.config.mjs"
-      ]
-    },
-    "@nx/jest:jest": {
-      "cache": true,
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
       "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "cacheableOperations": ["build", "test", "lint"]
       }
-    },
-    "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
-    },
-    "server": {
-      "cache": true
     }
   },
-  "plugins": [
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    }
-  ],
-  "generators": {
-    "@nx/angular:application": {
-      "e2eTestRunner": "playwright",
-      "linter": "eslint",
-      "style": "scss",
-      "unitTestRunner": "jest"
-    }
-  }
+  "projects": {
+    "core": {"root": "packages/core"},
+    "database": {"root": "packages/data-base-library"},
+    "storage": {"root": "packages/storage-library"},
+    "models": {"root": "packages/models"},
+    "botpress": {"root": "packages/botpress-sdk"},
+    
+    "auth": { "root": "apps/auth-service" },
+    "api": { "root": "apps/api-service" },
+    "integration": { "root": "apps/integration-service" },
+    "notifications": { "root": "apps/notifications-service" },
+    "reports": { "root": "apps/reports-service" },
+    "tasks": { "root": "apps/auth-service" },
+
+    "ouvidoria": { "root": "tools/ouvidoria" },
+    "portal": { "root": "tools/portal" },
+    "postgres": { "root": "tools/auth-service" }
+  },
+  "nxCloudId": "67b713c2bddbc67fed1fdfbb"
 }

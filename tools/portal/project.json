@@ -1,0 +1,23 @@
+{
+    "name": "portal",
+    "root": "tools/portal",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "wp server:start --port=8088",
+            "cwd": "tools/portal"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit tools/portal/tests",
+                "parallel": false,
+                "cwd": "tools/portal"
+            },
+            "cache": false
+        }
+    }
+}
+  

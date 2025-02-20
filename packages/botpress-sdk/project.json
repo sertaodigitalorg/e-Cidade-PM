@@ -1,0 +1,16 @@
+{
+    "name": "botpress",
+    "root": "packages/botpress-sdk",
+    "targets": {
+        "test": {
+        "executor": "nx:run-commands",
+        "options": {
+            "command": "php vendor/bin/phpunit packages/core/tests",
+            "parallel": false,
+            "cwd": "packages/botpress"
+        },
+        "cache": false
+        }
+    }
+}
+  

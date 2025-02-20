@@ -1,0 +1,23 @@
+{
+    "name": "auth",
+    "root": "packages/auth-service",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "symfony server:start --port=9000",
+            "cwd": "apps/auth-service"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit apps/auth-service/tests",
+                "parallel": false,
+                "cwd": "packages/auth-service"
+            },
+            "cache": false
+        }
+    }
+}
+  

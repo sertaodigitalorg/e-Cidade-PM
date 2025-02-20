@@ -1,0 +1,23 @@
+{
+    "name": "tasks",
+    "root": "packages/tasks-service",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "symfony server:start --port=9000",
+            "cwd": "apps/tasks-service"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit apps/tasks-service/tests",
+                "parallel": false,
+                "cwd": "packages/tasks-service"
+            },
+            "cache": false
+        }
+    }
+}
+  
