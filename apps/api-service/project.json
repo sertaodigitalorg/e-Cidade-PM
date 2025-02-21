@@ -1,6 +1,6 @@
 {
     "name": "api",
-    "root": "packages/api-service",
+    "root": "apps/api-service",
     "targets": {
         "serve": {
             "executor": "nx:run-commands",
@@ -14,7 +14,7 @@
             "options": {
                 "command": "php vendor/bin/phpunit apps/api-service/tests",
                 "parallel": false,
-                "cwd": "packages/api-service"
+                "cwd": "apps/api-service"
             },
             "cache": false
         }

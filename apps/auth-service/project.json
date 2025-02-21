@@ -1,6 +1,6 @@
 {
     "name": "auth",
-    "root": "packages/auth-service",
+    "root": "apps/auth-service",
     "targets": {
         "serve": {
             "executor": "nx:run-commands",
@@ -14,7 +14,7 @@
             "options": {
                 "command": "php vendor/bin/phpunit apps/auth-service/tests",
                 "parallel": false,
-                "cwd": "packages/auth-service"
+                "cwd": "apps/auth-service"
             },
             "cache": false
         }
