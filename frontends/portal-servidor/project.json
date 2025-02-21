@@ -22,7 +22,11 @@
             "input": "frontends/portal-servidor/public"
           }
         ],
-        "styles": ["frontends/portal-servidor/src/styles.scss"],
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "node_modules/@tabler/core/dist/css/tabler.min.css",
+          "frontends/portal-servidor/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -84,7 +88,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "servidor:build",
-        "port": 4200,
+        "port": 4300,
         "spa": true
       }
     }

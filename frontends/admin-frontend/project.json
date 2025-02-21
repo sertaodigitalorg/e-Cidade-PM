@@ -22,7 +22,11 @@
             "input": "frontends/admin-frontend/public"
           }
         ],
-        "styles": ["frontends/admin-frontend/src/styles.scss"],
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "node_modules/@tabler/core/dist/css/tabler.min.css",
+          "frontends/admin-frontend/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -84,7 +88,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "admin:build",
-        "port": 4200,
+        "port": 4100,
         "spa": true
       }
     }

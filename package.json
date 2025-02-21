@@ -15,6 +15,9 @@
     "@angular/platform-browser": "~18.2.0",
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
+    "@popperjs/core": "^2.11.8",
+    "@tabler/core": "^1.0.0",
+    "bootstrap": "^5.3.3",
     "empty": "0.10.1",
     "rxjs": "~7.8.0",
     "zone.js": "~0.14.3"

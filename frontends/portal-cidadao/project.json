@@ -22,7 +22,11 @@
             "input": "frontends/portal-cidadao/public"
           }
         ],
-        "styles": ["frontends/portal-cidadao/src/styles.scss"],
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "node_modules/@tabler/core/dist/css/tabler.min.css",
+          "frontends/portal-cidadao/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
