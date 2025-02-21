@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.logo {
+    height: 100px; /* Ajuste conforme necessário */
+    width: auto;
+    max-width: 200px; /* Evita que a logo fique muito grande */
+  }
+  
+  .hr-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+  
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #ddd;
+      margin: 0 10px;
+    }
+  }
+  
+  
+  .auth-icon {
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
