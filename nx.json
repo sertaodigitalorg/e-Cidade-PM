@@ -18,7 +18,8 @@
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages",
-    "frontsDir": "frontends"
+    "toolsDir": "tools",
+    "frontendsDir": "frontends"
   },
   "tasksRunnerOptions": {
     "default": {
