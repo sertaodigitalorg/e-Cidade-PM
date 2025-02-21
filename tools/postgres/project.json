@@ -1,20 +1,20 @@
 {
-    "name": "api",
-    "root": "packages/api-service",
+    "name": "postgres",
+    "root": "tools/postgres",
     "targets": {
         "serve": {
             "executor": "nx:run-commands",
             "options": {
             "command": "symfony server:start --port=8001",
-            "cwd": "apps/api-service"
+            "cwd": "tools/postgres"
             }
         },
         "test": {
             "executor": "nx:run-commands",
             "options": {
-                "command": "php vendor/bin/phpunit apps/api-service/tests",
+                "command": "php vendor/bin/phpunit tools/postgres/tests",
                 "parallel": false,
-                "cwd": "packages/api-service"
+                "cwd": "tools/postgres"
             },
             "cache": false
         }

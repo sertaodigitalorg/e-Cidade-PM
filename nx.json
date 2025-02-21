@@ -2,18 +2,23 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "main",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/test-setup.[jt]s"
     ],
     "sharedGlobals": []
   },
   "workspaceLayout": {
     "appsDir": "apps",
-    "libsDir": "packages"
+    "libsDir": "packages",
+    "frontsDir": "frontends"
   },
   "tasksRunnerOptions": {
     "default": {
@@ -24,22 +29,117 @@
     }
   },
   "projects": {
-    "core": {"root": "packages/core"},
-    "database": {"root": "packages/data-base-library"},
-    "storage": {"root": "packages/storage-library"},
-    "models": {"root": "packages/models"},
-    "botpress": {"root": "packages/botpress-sdk"},
-    
-    "auth": { "root": "apps/auth-service" },
-    "api": { "root": "apps/api-service" },
-    "integration": { "root": "apps/integration-service" },
-    "notifications": { "root": "apps/notifications-service" },
-    "reports": { "root": "apps/reports-service" },
-    "tasks": { "root": "apps/auth-service" },
-
-    "ouvidoria": { "root": "tools/ouvidoria" },
-    "portal": { "root": "tools/portal" },
-    "postgres": { "root": "tools/auth-service" }
+    "core": {
+      "root": "packages/core"
+    },
+    "database": {
+      "root": "packages/data-base-library"
+    },
+    "storage": {
+      "root": "packages/storage-library"
+    },
+    "models": {
+      "root": "packages/models"
+    },
+    "botpress": {
+      "root": "packages/botpress-sdk"
+    },
+    "auth": {
+      "root": "apps/auth-service"
+    },
+    "api": {
+      "root": "apps/api-service"
+    },
+    "integration": {
+      "root": "apps/integration-service"
+    },
+    "notifications": {
+      "root": "apps/notifications-service"
+    },
+    "reports": {
+      "root": "apps/reports-service"
+    },
+    "tasks": {
+      "root": "apps/auth-service"
+    },
+    "ouvidoria": {
+      "root": "tools/ouvidoria"
+    },
+    "portal": {
+      "root": "tools/portal"
+    },
+    "postgres": {
+      "root": "tools/postgres"
+    },
+    "admin": {
+      "root": "frontends/admin-frontend"
+    },
+    "login": {
+      "root": "frontends/auth-frontend"
+    },
+    "cidadao": {
+      "root": "frontends/portal-cidadao"
+    },
+    "servidor": {
+      "root": "frontends/portal-servidor"
+    },
+    "transparencia": {
+      "root": "frontends/portal-transparencia"
+    }
   },
-  "nxCloudId": "67b713c2bddbc67fed1fdfbb"
+  "nxCloudId": "67b713c2bddbc67fed1fdfbb",
+  "targetDefaults": {
+    "@angular-devkit/build-angular:browser": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/eslint:lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.js"
+      ]
+    },
+    "@nx/jest:jest": {
+      "cache": true,
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "e2e-ci--**/*": {
+      "dependsOn": ["^build"]
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ],
+  "generators": {
+    "@nx/angular:application": {
+      "e2eTestRunner": "playwright",
+      "linter": "eslint",
+      "style": "scss",
+      "unitTestRunner": "jest"
+    }
+  }
 }

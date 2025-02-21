@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ecidade/libs/*": ["packages/*"],
-      "@ecidade/apps/*": ["apps/*"]
+      "@ecidade/apps/*": ["apps/*"],
+      "@ecidade/libs/*": ["packages/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
