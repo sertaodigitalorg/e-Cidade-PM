@@ -58,12 +58,17 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4000
+      },
       "configurations": {
         "production": {
-          "buildTarget": "login:build:production"
+          "buildTarget": "login:build:production",
+          "port": 4000
         },
         "development": {
-          "buildTarget": "login:build:development"
+          "buildTarget": "login:build:development",
+          "port": 4000
         }
       },
       "defaultConfiguration": "development"
