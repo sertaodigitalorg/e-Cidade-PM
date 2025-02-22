@@ -48,6 +48,7 @@
         "twig/twig": "^2.12|^3.20"
     },
     "config": {
+        "vendor-dir": "vendor",
         "allow-plugins": {
             "php-http/discovery": true,
             "symfony/flex": true,

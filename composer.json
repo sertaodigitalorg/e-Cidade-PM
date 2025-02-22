@@ -1,4 +1,27 @@
 {
+    "scripts": {
+        "install-all": [
+            "composer install",
+            "composer install --working-dir=apps/api-service",
+            "composer install --working-dir=apps/auth-service",
+            "composer install --working-dir=apps/integration-service",
+            "composer install --working-dir=apps/notifications-service",
+            "composer install --working-dir=apps/reports-service",
+            "composer install --working-dir=apps/tasks-service"
+        ]
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "apps/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "^11.5"
     }
