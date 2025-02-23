@@ -20,8 +20,8 @@ export class LoginComponent {
     onLogin(): void {
       this.authService.login(this.login, this.senha).subscribe({
         next: (response) => {
-          localStorage.setItem('token', response.token); // Salvar token JWT
-          this.router.navigate(['/profile']); // Redirecionar para a página protegida
+          this.authService.saveToken(response.token); // Salva o token JWT no localStorage
+          this.router.navigate(['/profile']); // Redirecionar para o perfil do usuário
         },
         error: () => {
           this.errorMessage = 'Credenciais inválidas. Tente novamente.';

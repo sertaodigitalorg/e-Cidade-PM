@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/env';
-import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +15,19 @@ export class AuthService {
     return this.http.post<{ token: string}>(`${this.apiUrl}/login`, { login, senha });
   }
 
-  getUser(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/user`);
+  saveToken(token: string): void {
+    localStorage.setItem('token', token);
   }
 
-  logout(): void {
-    localStorage.removeItem('token');
+  getToken(): string | null {
+    return localStorage.getItem('token');
   }
 
   isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
   }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }  
 }
