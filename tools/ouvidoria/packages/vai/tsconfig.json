@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "strict": false
-  },
-  "exclude": ["node_modules", "dist"],
-  "include": ["src/**/*", "vitest.d.ts", "e2e/**/*"]
-}

@@ -1,4 +1,6 @@
 {
+    "name": "ecidade/notifications-service",
+    "description": "Aplicação para notificações.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",

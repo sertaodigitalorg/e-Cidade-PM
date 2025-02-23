@@ -1,0 +1,23 @@
+{
+    "name": "botpress",
+    "root": "tools/botpress",
+    "targets": {
+        "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+            "command": "symfony server:start --port=8001",
+            "cwd": "tools/botpress"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php vendor/bin/phpunit tools/botpress/tests",
+                "parallel": false,
+                "cwd": "tools/botpress"
+            },
+            "cache": false
+        }
+    }
+}
+  

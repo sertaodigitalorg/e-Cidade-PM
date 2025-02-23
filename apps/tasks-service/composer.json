@@ -1,4 +1,6 @@
 {
+    "name": "ecidade/tasks-service",
+    "description": "Aplicação para agendamento de tarefas.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",

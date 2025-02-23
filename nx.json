@@ -42,7 +42,7 @@
     "models": {
       "root": "packages/models"
     },
-    "botpress": {
+    "botpress-sdk": {
       "root": "packages/botpress-sdk"
     },
     "auth": {
@@ -63,8 +63,8 @@
     "tasks": {
       "root": "apps/auth-service"
     },
-    "ouvidoria": {
-      "root": "tools/ouvidoria"
+    "botpress": {
+      "root": "tools/botpress"
     },
     "portal": {
       "root": "tools/portal"
@@ -86,6 +86,9 @@
     },
     "transparencia": {
       "root": "frontends/portal-transparencia"
+    },
+    "ouvidoria": {
+      "root": "frontends/ouvidoria"
     }
   },
   "nxCloudId": "67b713c2bddbc67fed1fdfbb",

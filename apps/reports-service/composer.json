@@ -1,4 +1,6 @@
 {
+    "name": "ecidade/reports-service",
+    "description": "Aplicação para relatorios.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",

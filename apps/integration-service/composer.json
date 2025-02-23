@@ -1,7 +1,9 @@
 {
+    "name": "ecidade/integration-service",
+    "description": "Aplicação para integrações.",
     "type": "project",
-    "license": "proprietary",
-    "minimum-stability": "stable",
+    "license": "MIT",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=8.2",

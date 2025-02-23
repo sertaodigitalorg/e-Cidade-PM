@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@ecidade/apps/*": ["apps/*"],
-      "@ecidade/libs/*": ["packages/*"]
+      "@ecidade/fronts/*": ["frontends/*"],
+      "@ecidade/libs/*": ["packages/*"],
+      "@ecidade/tools/*": ["tools/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

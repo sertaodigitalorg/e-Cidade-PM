@@ -1,6 +1,8 @@
 {
+    "name": "ecidade/api-service",
+    "description": "Aplicação para exposição de serviços REST do e-Cidade.",
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
