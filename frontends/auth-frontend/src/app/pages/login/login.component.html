@@ -9,8 +9,8 @@
         <div class="card-body">
             <h2 class="card-title text-center mb-4">Acesse sua conta</h2>
             <div class="mb-3">
-                <label class="form-label">E-mail</label>
-                <input type="email" class="form-control" placeholder="Digite seu e-mail">
+                <label class="form-label">Usuario</label>
+                <input type="text" class="form-control" placeholder="Digite seu usuario">
             </div>
             <div class="mb-2">
                 <label class="form-label">
@@ -27,8 +27,10 @@
             </div>
             <!-- Botão "Entrar" -->
             <div class="form-footer">
-                <button class="btn btn-primary w-100">Entrar</button>
+                <button (click)="onLogin()" class="btn btn-primary w-100">Entrar</button>
             </div>
+
+            <p *ngIf="errorMessage" class="text-danger text-center">{{ errorMessage }}</p>
 
             <!-- Linha de separação OR -->
             <div class="hr-text">ou</div>

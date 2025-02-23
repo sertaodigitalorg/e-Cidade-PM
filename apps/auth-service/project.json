@@ -17,6 +17,25 @@
                 "cwd": "apps/auth-service"
             },
             "cache": false
+        },
+
+        "generate-keypair": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php bin/console lexik:jwt:generate-keypair",
+                "parallel": false,
+                "cwd": "apps/auth-service"
+            },
+            "cache": false
+        },
+        "update-keypair": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "php bin/console lexik:jwt:generate-keypair --overwrite -n",
+                "parallel": false,
+                "cwd": "apps/auth-service"
+            },
+            "cache": false
         }
     }
 }
