@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  botpress:
+    image: botpress/server
+    container_name: botpress
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://ecidade:ecidade@localhost:5432/ecidade?serverVersion=12&charset=WIN1252"
+      BP_DB_TYPE: "postgres"
+      BP_DB_URL: "postgresql://ecidade:ecidade@db:5432/ecidade"
+      BP_DB_SSL: "false"
+      BP_DB_SCHEMA: "ouvidoria"  #Garante que os dados serão armazenados no schema "ouvidoria"
+    volumes:
+      - ./botpress_data:/botpress/data  #Persistência local dos dados do Botpress
+    networks:
+      - botpress_network
+
+networks:
+  botpress_network:
+    driver: bridge
