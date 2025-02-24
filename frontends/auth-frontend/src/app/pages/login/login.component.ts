@@ -2,38 +2,52 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-    errorMessage = '';
+    loginForm: FormGroup;
+    errorMessage: string;
 
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(
+      private authService: AuthService, 
+      private router: Router,
+      private fb: FormBuilder) {
 
-    loginForm = new FormGroup({
-      login: new FormControl(''),
-      senha: new FormControl('')
-    });
+        this.errorMessage = '';
+
+        this.loginForm = this.fb.group({
+          login: ['', Validators.required],
+          senha: ['', Validators.required]
+        });
+
+      }
 
     onLogin(): void {
-      debugger;
-      const { login, senha } = this.loginForm.value;
-      console.log("Login "+login);
-      console.log("Senha "+senha);
-      /*this.authService.login(this.login, this.senha).subscribe({
-        next: (response) => {
-          this.authService.saveToken(response.token); // Salva o token JWT no localStorage
-          this.router.navigate(['/profile']); // Redirecionar para o perfil do usuário
-        },
-        error: () => {
-          this.errorMessage = 'Credenciais inválidas. Tente novamente.';
-        }
-      });*/
+
+      if (this.loginForm.valid) {
+        const { login, senha } = this.loginForm.value;      
+        this.authService.login(login, senha).subscribe({
+          next: (response) => {
+            this.authService.saveToken(response.token); // Salva o token JWT no localStorage
+            this.router.navigate(['/profile']); // Redirecionar para o perfil do usuário
+          },
+          error: () => {
+            this.errorMessage = 'Credenciais inválidas. Tente novamente.';
+          }
+        });
+
+      } else {
+        
+        this.errorMessage = 'Por favor, preencha todos os campos.';
+      }
+
     }
 }

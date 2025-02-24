@@ -19,7 +19,7 @@
     "appsDir": "apps",
     "libsDir": "packages",
     "toolsDir": "tools",
-    "frontendsDir": "frontends"
+    "frontsDir": "frontends"
   },
   "tasksRunnerOptions": {
     "default": {
