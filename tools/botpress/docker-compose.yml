@@ -8,9 +8,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DATABASE_URL: "postgresql://ecidade:ecidade@192.168.1.3:5432/ecidade?serverVersion=12&charset=UTF8"      
+      DATABASE_URL: "postgresql://ecidade:ecidade@192.168.1.3:5432/botpress?serverVersion=12&charset=UTF8"      
       BP_DB_TYPE: "postgres"
-      BP_DB_URL: "postgresql://ecidade:ecidade@192.168.1.3:5432/ecidade"
+      BP_DB_URL: "postgresql://ecidade:ecidade@192.168.1.3:5432/botpress?serverVersion=12&charset=UTF8"
       BP_DB_SSL: "false"
     volumes:
       - ./botpress_data:/botpress/data  #Persistência local dos dados do Botpress

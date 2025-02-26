@@ -1,0 +1,57 @@
+{
+  "locked": false,
+  "disabled": false,
+  "private": false,
+  "details": {
+    "website": "https://SertaoDigital.org",
+    "phoneNumber": "(81) 9.9669.3862",
+    "emailAddress": "sertaodigitalorg@gmail.com",
+    "termsConditions": "https://SertaoDigital.org/termosecondicoes",
+    "privacyPolicy": "https://SertaoDigital.org/politicadeprivacidade",
+    "avatarUrl": "",
+    "coverPictureUrl": ""
+  },
+  "$schema": "../../bot.config.schema.json",
+  "description": "",
+  "active": true,
+  "version": "12.31.9",
+  "author": "Botpress, Inc.",
+  "license": "AGPL-3.0",
+  "imports": {
+    "modules": [],
+    "incomingMiddleware": [],
+    "outgoingMiddleware": [],
+    "contentTypes": [
+      "builtin_action-button",
+      "builtin_audio",
+      "builtin_card",
+      "builtin_carousel",
+      "dropdown",
+      "builtin_file",
+      "builtin_image",
+      "builtin_location",
+      "builtin_single-choice",
+      "builtin_text",
+      "builtin_video"
+    ]
+  },
+  "dialog": {
+    "timeoutInterval": "5m"
+  },
+  "logs": {
+    "expiration": "1 week"
+  },
+  "defaultLanguage": "pt",
+  "languages": [
+    "pt"
+  ],
+  "id": "e-cidade-pm-bot",
+  "name": "e-Cidade PM Bot",
+  "pipeline_status": {
+    "current_stage": {
+      "id": "prod",
+      "promoted_on": "2025-02-25T14:47:46.535Z",
+      "promoted_by": "wellington.cs@hotmail.com"
+    }
+  }
+}

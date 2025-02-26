@@ -3,7 +3,9 @@
     "id": "default",
     "name": "Default",
     "audience": "external",
-    "bots": [],
+    "bots": [
+      "e-cidade-pm-bot"
+    ],
     "roles": [
       {
         "id": "admin",

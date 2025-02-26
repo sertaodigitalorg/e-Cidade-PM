@@ -131,7 +131,10 @@
     }
   },
   "superAdmins": [
-    {}
+    {
+      "email": "wellington.cs@hotmail.com",
+      "strategy": "default"
+    }
   ],
   "sendUsageStats": true,
   "dataRetention": {
